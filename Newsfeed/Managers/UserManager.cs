@@ -80,7 +80,8 @@ namespace Newsfeed.Managers
                 Id = userDTO.Id.ToString(),
                 Username = userDTO.Username,
                 Password = userDTO.Password,
-                BlockedUsers = blockedUsers
+                BlockedUsers = blockedUsers,
+                AvatarId = userDTO.Avatar
             };
 
             return userCTO;

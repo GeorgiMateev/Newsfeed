@@ -90,7 +90,7 @@ namespace Newsfeed.Domain
             // Join the messsages and users tables on the username
             string mapMessages = @"
                 function() {
-                    emit(this.Author.username, { blockedBy : 0, Likes : this.Likes});
+                    emit(this.Author.Username, { blockedBy : 0, Likes : this.Likes});
             }";
             string mapUsers = @"
                 function() {
@@ -139,6 +139,8 @@ namespace Newsfeed.Domain
                 var username = result["_id"].AsString;
                 finalResults.Add(username, rating);
             }
+
+            ratings.Drop();
 
             return finalResults;
         }
